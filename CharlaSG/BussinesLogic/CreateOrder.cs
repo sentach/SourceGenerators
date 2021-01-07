@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 
 namespace CharlaSG.BussinesLogic
 {
-    public record CreateOrder : IRequest<bool>
+    [ControllerName("Orders")]
+    public record CreateOrder : IPost<bool>
     {
         public int Id { get; set; }
         public string Customer { get; set; }

@@ -5,7 +5,8 @@ using MediatR;
 
 namespace CharlaSG.BussinesLogic
 {
-    public record GetAllOrders : IRequest<List<Order>>
+    [ControllerName("Orders")]
+    public record GetAllOrders : IGet<List<Order>>
     {
         public class GetAllOrdersHandle : IRequestHandler<GetAllOrders, List<Order>>
         {
