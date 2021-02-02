@@ -14,7 +14,7 @@ namespace SourceGenerator
     {
         public void Initialize(GeneratorInitializationContext context)
         {
-#if DEBUG//SOURCEGENERATOR
+#if DEBUGSOURCEGENERATOR
             if (!Debugger.IsAttached)
             {
                 Debugger.Launch();
