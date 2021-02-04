@@ -14,6 +14,12 @@ namespace SourceGenerator
     {
         public void Initialize(GeneratorInitializationContext context)
         {
+#if DEBUGSOURCEGENERATOR
+            if (!Debugger.IsAttached)
+            {
+                Debugger.Launch();
+            }
+#endif
             // Register a factory that can create our custom syntax receiver
             context.RegisterForSyntaxNotifications(() => new MySyntaxReceiver());
         }
